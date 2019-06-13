@@ -1,0 +1,4 @@
+${PODS_ROOT}/Target Support Files/Pods-ReadIt/Pods-ReadIt-frameworks.sh
+${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework
+${BUILT_PRODUCTS_DIR}/Keys/Keys.framework
+${BUILT_PRODUCTS_DIR}/SWXMLHash/SWXMLHash.framework
