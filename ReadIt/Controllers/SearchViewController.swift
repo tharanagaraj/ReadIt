@@ -8,8 +8,10 @@
 
 import UIKit
 import SWXMLHash
+import XMLMapper
 
-class SearchViewController: UIViewController {
+
+class SearchViewController: UIViewController, XMLParserDelegate {
 
     @IBOutlet weak var searchTextField: UITextField!
     
@@ -22,23 +24,20 @@ class SearchViewController: UIViewController {
         
         let url = URL(string: myUrl)!
         do{
-        HTTPClient.request(url: url, success: { responseData  in
-            if let data = responseData.data{
-                print("The data did indeed return")
-                let xml = SWXMLHash.parse(data)
-                print(xml["GoodreadsResponse"]["author"])
+            HTTPClient.request(url: url) { (result) in
+                
+                let author = XMLMapper<Author>().map(XMLString: result)
+                let authorID = author?.id
+                
             }
-        })
         }
     }
     
     override func viewDidLoad() {
         super.viewDidLoad()
         searchTextField.addTarget(self, action: #selector(getText(_:)), for: .editingDidEndOnExit)
-        
     }
     
-
     /*
     // MARK: - Navigation
 

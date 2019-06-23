@@ -16,7 +16,7 @@ class HTTPClient: NSObject {
     static let keys = ReadItKeys()
     typealias RequestParams = [String: String]
     
-    public static func request (url urlString : URL, param : RequestParams? = nil, success: @escaping(DataResponse<Data>) -> Void){
+    public static func request (url urlString : URL, param : RequestParams? = nil, completion: @escaping (String) -> Void){
         var parameters = ["key" : keys.goodreadsAPIClientKey]
         if param != nil {
             parameters = param?.merging(parameters, uniquingKeysWith: {(old, new) in new}) ?? ["":""]
@@ -24,7 +24,15 @@ class HTTPClient: NSObject {
         
         AF.request(urlString, method: .get, parameters: parameters)
         .validate(statusCode: 200..<600)
-        .responseData(completionHandler: success)
+        .responseString{ response in
+            switch response.result{
+            case .success(let stringValue):
+                 completion(stringValue)
+                break
+            case .failure(let error):
+                print(error)
+            }
+        }
         
     }
 }
