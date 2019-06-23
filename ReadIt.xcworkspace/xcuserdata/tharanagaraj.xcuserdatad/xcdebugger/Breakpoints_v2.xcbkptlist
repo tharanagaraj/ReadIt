@@ -10,13 +10,29 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "ReadIt/Networking/HTTPClient.swift"
-            timestampString = "582084790.909657"
+            timestampString = "582999454.6135809"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "21"
-            endingLineNumber = "21"
-            landmarkName = "request(url:param:success:)"
+            startingLineNumber = "23"
+            endingLineNumber = "23"
+            landmarkName = "request(url:param:completion:)"
             landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "ReadIt/Controllers/SearchViewController.swift"
+            timestampString = "582999454.613662"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "48"
+            endingLineNumber = "48"
+            landmarkName = "SearchViewController"
+            landmarkType = "3">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -26,13 +42,45 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "ReadIt/Networking/HTTPClient.swift"
-            timestampString = "582084790.910133"
+            timestampString = "582999454.613754"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "25"
-            endingLineNumber = "25"
-            landmarkName = "request(url:param:success:)"
+            startingLineNumber = "29"
+            endingLineNumber = "29"
+            landmarkName = "request(url:param:completion:)"
             landmarkType = "7">
+            <Locations>
+               <Location
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "static ReadIt.HTTPClient.request(url: Foundation.URL, param: Swift.Optional&lt;Swift.Dictionary&lt;Swift.String, Swift.String&gt;&gt;, completion: (Swift.String) -&gt; ()) -&gt; ()"
+                  moduleName = "ReadIt"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/tharanagaraj/Library/Autosave%20Information/ReadIt/ReadIt/Networking/HTTPClient.swift"
+                  timestampString = "582951851.880263"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "29"
+                  endingLineNumber = "29"
+                  offsetFromSymbolStart = "1919">
+               </Location>
+               <Location
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #2 (Alamofire.DataResponse&lt;Swift.String&gt;) -&gt; () in static ReadIt.HTTPClient.request(url: Foundation.URL, param: Swift.Optional&lt;Swift.Dictionary&lt;Swift.String, Swift.String&gt;&gt;, completion: (Swift.String) -&gt; ()) -&gt; ()"
+                  moduleName = "ReadIt"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/tharanagaraj/Library/Autosave%20Information/ReadIt/ReadIt/Networking/HTTPClient.swift"
+                  timestampString = "582951851.883827"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "30"
+                  endingLineNumber = "30"
+                  offsetFromSymbolStart = "184">
+               </Location>
+            </Locations>
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -41,45 +89,13 @@
             shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "ReadIt/Controllers/SearchViewController.swift"
-            timestampString = "582084790.91054"
+            filePath = "ReadIt/Networking/HTTPClient.swift"
+            timestampString = "582999454.6138099"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "23"
-            endingLineNumber = "23"
-            landmarkName = "getText(_:)"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "ReadIt/Controllers/SearchViewController.swift"
-            timestampString = "582084790.910615"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "26"
-            endingLineNumber = "26"
-            landmarkName = "getText(_:)"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "ReadIt/Controllers/SearchViewController.swift"
-            timestampString = "582084790.9106719"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "27"
-            endingLineNumber = "27"
-            landmarkName = "getText(_:)"
+            startingLineNumber = "30"
+            endingLineNumber = "30"
+            landmarkName = "request(url:param:completion:)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
