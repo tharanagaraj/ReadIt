@@ -11,9 +11,9 @@ import SWXMLHash
 import XMLMapper
 
 
-class SearchViewController: UIViewController, XMLParserDelegate {
-
+class SearchViewController: UIViewController, UISearchBarDelegate {
     @IBOutlet weak var searchTextField: UITextField!
+    @IBOutlet weak var searchBar: UISearchBar!
     
     @objc func getText(_ sender: UITextField) throws{
         searchTextField.resignFirstResponder()
@@ -26,8 +26,9 @@ class SearchViewController: UIViewController, XMLParserDelegate {
         do{
             HTTPClient.request(url: url) { (result) in
                 
-                let author = XMLMapper<Author>().map(XMLString: result)
+                let author = XMLMapper<AuthorMetadata>().map(XMLString: result)
                 let authorID = author?.id
+                print(authorID)
                 
             }
         }
@@ -35,7 +36,26 @@ class SearchViewController: UIViewController, XMLParserDelegate {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        searchTextField.addTarget(self, action: #selector(getText(_:)), for: .editingDidEndOnExit)
+        searchBar.delegate = self
+//        searchTextField.addTarget(self, action: #selector(getText(_:)), for: .editingDidEndOnExit)
+        
+    }
+    
+    func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
+        guard let text = searchBar.text else {return}
+        let authorName = text.trimmingCharacters(in: .whitespaces)
+        var myUrl = "https://www.goodreads.com/api/author_url/" + authorName
+        myUrl = myUrl.addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed)!
+        let url = URL(string: myUrl)!
+        do{
+            HTTPClient.request(url: url) { (result) in
+                
+                let author = XMLMapper<AuthorMetadata>().map(XMLString: result)
+                let authorID = author?.id
+                print(authorID)
+                
+            }
+        }
     }
     
     /*
