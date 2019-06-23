@@ -9,35 +9,43 @@
 import UIKit
 import SWXMLHash
 import XMLMapper
+import WebKit
 
 
-class SearchViewController: UIViewController, UISearchBarDelegate {
+class SearchViewController: UIViewController, UISearchBarDelegate , WKUIDelegate, WKNavigationDelegate {
     @IBOutlet weak var searchTextField: UITextField!
     @IBOutlet weak var searchBar: UISearchBar!
+    @IBOutlet var webView: WKWebView!
     
-    @objc func getText(_ sender: UITextField) throws{
-        searchTextField.resignFirstResponder()
-        let name = searchTextField.text!.trimmingCharacters(in: .whitespaces)
-        
-        var myUrl = "https://www.goodreads.com/api/author_url/" + name
-        myUrl = myUrl.addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed)!
-        
-        let url = URL(string: myUrl)!
-        do{
-            HTTPClient.request(url: url) { (result) in
-                
-                let author = XMLMapper<AuthorMetadata>().map(XMLString: result)
-                let authorID = author?.id
-                print(authorID)
-                
-            }
-        }
+//    @objc func getText(_ sender: UITextField) throws{
+//        searchTextField.resignFirstResponder()
+//        let name = searchTextField.text!.trimmingCharacters(in: .whitespaces)
+//
+//        var myUrl = "https://www.goodreads.com/api/author_url/" + name
+//        myUrl = myUrl.addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed)!
+//
+//        let url = URL(string: myUrl)!
+//        do{
+//            HTTPClient.request(url: url) { (result) in
+//
+//                let author = XMLMapper<AuthorMetadata>().map(XMLString: result)
+//                let authorID = author?.id
+//
+//            }
+//        }
+//    }
+    
+    
+    override func loadView() {
+        super.loadView()
+        webView.navigationDelegate = self
+        view.addSubview(webView)
     }
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
         searchBar.delegate = self
-//        searchTextField.addTarget(self, action: #selector(getText(_:)), for: .editingDidEndOnExit)
         
     }
     
@@ -47,13 +55,25 @@ class SearchViewController: UIViewController, UISearchBarDelegate {
         var myUrl = "https://www.goodreads.com/api/author_url/" + authorName
         myUrl = myUrl.addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed)!
         let url = URL(string: myUrl)!
+        self.showActivityIndicator(onView: self.view)
         do{
             HTTPClient.request(url: url) { (result) in
-                
+               
                 let author = XMLMapper<AuthorMetadata>().map(XMLString: result)
                 let authorID = author?.id
-                print(authorID)
-                
+                self.getAuthorInfo(authorID : authorID!)
+            }
+        }
+        
+    }
+    
+    func getAuthorInfo(authorID: Int32){
+        let authorURL = "https://www.goodreads.com/author/show.xml"
+        let url = URL(string: authorURL)!
+        do {
+            HTTPClient.request(url: url, param: ["id" : String(authorID)]) { (result) in
+               self.removeActivityIndicator()
+               self.webView.loadHTMLString(result, baseURL: nil)
             }
         }
     }

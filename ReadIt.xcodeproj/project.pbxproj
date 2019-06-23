@@ -8,6 +8,9 @@
 
 /* Begin PBXBuildFile section */
 		1903BF936A1954999D1E1C99 /* Pods_ReadIt.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 461D052A0A295AED637FABD1 /* Pods_ReadIt.framework */; };
+		F71541A822C0318700A5461E /* SavedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F71541A722C0318700A5461E /* SavedViewController.swift */; };
+		F71541AA22C0348E00A5461E /* WebKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F71541A922C0348E00A5461E /* WebKit.framework */; };
+		F71541AD22C03CE500A5461E /* SpinnerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F71541AC22C03CE500A5461E /* SpinnerViewController.swift */; };
 		F7C8C1BB22AA046000F22EF6 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7C8C1BA22AA046000F22EF6 /* AppDelegate.swift */; };
 		F7C8C1BD22AA046000F22EF6 /* HomeTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7C8C1BC22AA046000F22EF6 /* HomeTabBarController.swift */; };
 		F7C8C1C022AA046000F22EF6 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F7C8C1BE22AA046000F22EF6 /* Main.storyboard */; };
@@ -26,6 +29,9 @@
 		35EFEFDA5B6E80D42C1DB7A6 /* Pods-ReadIt.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ReadIt.release.xcconfig"; path = "Target Support Files/Pods-ReadIt/Pods-ReadIt.release.xcconfig"; sourceTree = "<group>"; };
 		461D052A0A295AED637FABD1 /* Pods_ReadIt.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ReadIt.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		6DA22D33F7DF5B3F3DFBCE2A /* Pods-ReadIt.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ReadIt.debug.xcconfig"; path = "Target Support Files/Pods-ReadIt/Pods-ReadIt.debug.xcconfig"; sourceTree = "<group>"; };
+		F71541A722C0318700A5461E /* SavedViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SavedViewController.swift; sourceTree = "<group>"; };
+		F71541A922C0348E00A5461E /* WebKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WebKit.framework; path = System/Library/Frameworks/WebKit.framework; sourceTree = SDKROOT; };
+		F71541AC22C03CE500A5461E /* SpinnerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpinnerViewController.swift; sourceTree = "<group>"; };
 		F7C8C1B722AA046000F22EF6 /* ReadIt.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ReadIt.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F7C8C1BA22AA046000F22EF6 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		F7C8C1BC22AA046000F22EF6 /* HomeTabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeTabBarController.swift; sourceTree = "<group>"; };
@@ -47,6 +53,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F71541AA22C0348E00A5461E /* WebKit.framework in Frameworks */,
 				1903BF936A1954999D1E1C99 /* Pods_ReadIt.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -66,9 +73,18 @@
 		E5F27BE7FD3151D78B6D9F1E /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				F71541A922C0348E00A5461E /* WebKit.framework */,
 				461D052A0A295AED637FABD1 /* Pods_ReadIt.framework */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		F71541AB22C03CA000A5461E /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				F71541AC22C03CE500A5461E /* SpinnerViewController.swift */,
+			);
+			path = Extensions;
 			sourceTree = "<group>";
 		};
 		F7C8C1AE22AA046000F22EF6 = {
@@ -92,6 +108,7 @@
 		F7C8C1B922AA046000F22EF6 /* ReadIt */ = {
 			isa = PBXGroup;
 			children = (
+				F71541AB22C03CA000A5461E /* Extensions */,
 				F7C8C1D722AD86CF00F22EF6 /* Networking */,
 				F7C8C1D422AD80C500F22EF6 /* Models */,
 				F7C8C1BA22AA046000F22EF6 /* AppDelegate.swift */,
@@ -112,6 +129,7 @@
 				F7C8C1D122AC588300F22EF6 /* RecommendationViewController.swift */,
 				F7C8C1CF22AC54F500F22EF6 /* RecommendationCell.swift */,
 				F7C8C1DA22ADF7C600F22EF6 /* SearchViewController.swift */,
+				F71541A722C0318700A5461E /* SavedViewController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -248,6 +266,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F71541AD22C03CE500A5461E /* SpinnerViewController.swift in Sources */,
 				F7C8C1D022AC54F500F22EF6 /* RecommendationCell.swift in Sources */,
 				F7C8C1D622AD80E900F22EF6 /* Keys.swift in Sources */,
 				F7C8C1DB22ADF7C600F22EF6 /* SearchViewController.swift in Sources */,
@@ -256,6 +275,7 @@
 				F7C8C1D922AD896600F22EF6 /* HTTPClient.swift in Sources */,
 				F7C8C1D222AC588300F22EF6 /* RecommendationViewController.swift in Sources */,
 				F7C8C1BB22AA046000F22EF6 /* AppDelegate.swift in Sources */,
+				F71541A822C0318700A5461E /* SavedViewController.swift in Sources */,
 				F7C8C1C322AA046000F22EF6 /* ReadIt.xcdatamodeld in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

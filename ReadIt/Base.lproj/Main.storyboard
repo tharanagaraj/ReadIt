@@ -32,7 +32,7 @@
         <!--Saved-->
         <scene sceneID="Coc-bN-7uE">
             <objects>
-                <viewController id="3Px-CP-nLJ" sceneMemberID="viewController">
+                <viewController id="3Px-CP-nLJ" customClass="SavedViewController" customModule="ReadIt" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="S0e-Ee-Qnz">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -43,7 +43,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="V9g-Ik-iOY" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="790" y="47"/>
+            <point key="canvasLocation" x="924.63768115942037" y="36.830357142857139"/>
         </scene>
         <!--Search-->
         <scene sceneID="n1H-vB-LLY">
@@ -57,18 +57,34 @@
                                 <rect key="frame" x="0.0" y="58" width="414" height="56"/>
                                 <textInputTraits key="textInputTraits"/>
                             </searchBar>
+                            <wkWebView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="OFd-MC-UQu">
+                                <rect key="frame" x="20" y="171" width="374" height="562"/>
+                                <color key="backgroundColor" red="0.36078431370000003" green="0.38823529410000002" blue="0.4039215686" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="562" id="qin-el-ux2"/>
+                                </constraints>
+                                <wkWebViewConfiguration key="configuration">
+                                    <audiovisualMediaTypes key="mediaTypesRequiringUserActionForPlayback" none="YES"/>
+                                    <wkPreferences key="preferences"/>
+                                </wkWebViewConfiguration>
+                            </wkWebView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="Gor-Gk-Bxj" firstAttribute="leading" secondItem="9vl-o8-GP4" secondAttribute="leading" id="2K2-Mn-KI9"/>
+                            <constraint firstItem="9vl-o8-GP4" firstAttribute="trailing" secondItem="OFd-MC-UQu" secondAttribute="trailing" constant="20" id="2vi-Pk-5IN"/>
                             <constraint firstItem="9vl-o8-GP4" firstAttribute="trailing" secondItem="Gor-Gk-Bxj" secondAttribute="trailing" id="Dik-Xz-3t1"/>
+                            <constraint firstItem="OFd-MC-UQu" firstAttribute="top" secondItem="Gor-Gk-Bxj" secondAttribute="bottom" constant="57" id="NIR-GO-p7j"/>
                             <constraint firstItem="Gor-Gk-Bxj" firstAttribute="top" secondItem="9vl-o8-GP4" secondAttribute="top" constant="14" id="Yzi-Sn-L1r"/>
+                            <constraint firstItem="9vl-o8-GP4" firstAttribute="bottom" secondItem="OFd-MC-UQu" secondAttribute="bottom" constant="80" id="dt5-ck-W6g"/>
+                            <constraint firstItem="OFd-MC-UQu" firstAttribute="leading" secondItem="9vl-o8-GP4" secondAttribute="leading" constant="20" id="eN4-qh-AcB"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="9vl-o8-GP4"/>
                     </view>
                     <tabBarItem key="tabBarItem" title="Search" id="kG4-Bs-C0r"/>
                     <connections>
                         <outlet property="searchBar" destination="Gor-Gk-Bxj" id="z1Q-hd-pAn"/>
+                        <outlet property="webView" destination="OFd-MC-UQu" id="N3w-Lw-yhN"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Sul-11-OX0" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -78,7 +94,7 @@
         <!--Rec-->
         <scene sceneID="FbS-y7-o9G">
             <objects>
-                <tableViewController id="QyQ-fl-Lwp" sceneMemberID="viewController">
+                <tableViewController id="QyQ-fl-Lwp" customClass="RecommendationViewController" customModule="ReadIt" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="Mqn-rK-lon">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
